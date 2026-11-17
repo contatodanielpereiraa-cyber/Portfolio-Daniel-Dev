@@ -1,0 +1,810 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: "Roboto Slab", serif;
+}
+
+body {
+    background-color: black;
+    /*cor de fundo do site*/
+    height: 100vh;
+    /*altura da margam e elementos do site*/
+}
+
+.interface {
+    max-width: 1280px;
+    /*lagura da lateral do site*/
+    margin: 0 auto;
+    /*margem dos elementos no cabeçario*/
+}
+
+.flex {
+    display: flex; /*organizar os elementos*/
+}
+
+/* botao-estilo-geral */
+.btn-contato button {
+    padding: 10px 40px;
+    /*espaçamento do texto-butão-contato*/
+    font-size: 18px;
+    /*tamanho da fonte-contato*/
+    font-weight: 600;
+    /*peso da fonte-contato*/
+    background-color: #00ff00;
+    /*cor de fundo do botão-contato*/
+    border: 0;
+    /*formado da borta-contato*/
+    border-radius: 30px;
+    /*deixa a borta arredondada-contato*/
+    cursor: pointer;
+    /*efeito-dedinho-contato*/
+    transition: .2s;
+    /*transiçao do botao-entre-em-contato*/
+}
+
+h2.titulo {
+    color: #fff;
+    /*cor do tilulos gerais*/
+    font-size: 38px;
+    /*tamanho da fonte*/
+    text-align: center;
+    /*deixa o titulo no meio*/
+}
+
+h2.titulo span {
+    /*design do nome especialidade*/
+    color: #00ff00;
+    /*cor do nome especialidade*/
+}
+
+button:hover,
+form .btn-envia input:hover {
+    /*efeito e zoon no butão-contato*/
+    box-shadow: 0px 0px 8px #0022fffe;
+    /*cor da sobra do butão-contato*/
+    transform: scale(1.06);
+    /*zoon do botão-entra-em-contato*/
+}
+
+/* ESTILO DO CABEÇARIO */
+header {
+    padding: 40px 4%;
+    /*espasamento da logo e menu das lateral do site*/
+}
+
+header>.interface {
+    /*colocar o elemento um do lado do outro*/
+    display: flex;
+    /*apresentação dos elementos na tela*/
+    align-items: center;
+    /*alinhamento dos elementos*/
+    justify-content: space-between;
+    /*alinhamento e distribuiçao dos espaços dos elementos*/
+}
+
+header a {
+    color: #5c5c5c;
+    /*cor do texto do menu*/
+    text-decoration: none;
+    display: inline-block;
+    /*coversorde do link do zoon*/
+    transition: .2s;
+    /*deixar o efeito do zoon mais suave*/
+}
+
+header a:hover {
+    /*colocar o efeito de sobreamento*/
+    color: #00ff00;
+    /*cor do efeito*/
+    transform: scale(1.06);
+    /*efeito de zoon*/
+}
+
+header.menu-desktop a:hover {
+    /*colocar o efeito de sobreamento*/
+    color: #00ff00;
+    /*cor do efeito*/
+    transform: scale(1.06);
+    /*efeito de zoon*/
+}
+
+header nav ul {
+    list-style-type: none;
+    /*tirando as bolinhas do menu*/
+}
+
+header nav.menu-desktop ul li {
+    display: inline-block;
+    /*colocando os nomes do menu um do lado do outro*/
+    padding: 0 40px;
+    /*espaçamento entre os nomes do menu*/
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* ESTILO DO MENU MOBILE */
+.btn-abrir-menu i{
+    color: #00ff00; /*cor do botao-abrir*/
+    font-size: 40px; /*tamanho do botao*/
+}
+
+.menu-mobile{
+    background-color: #000; /*cor da coluna*/
+    height: 100vh; /*altura da coluna*/
+    position: fixed; /*ficsa a coluna em uma parte do site*/
+    top: 0; /*deixa os nomes centralizados*/
+    right: 0; /*deixa os nomes do lado direito*/
+    z-index: 99999; /*deixa a logo por tras da coluna*/
+    width: 0%; /*largura da coluna*/
+    overflow: hidden; /*ñ deixa nenhum icone de fora*/
+    transition: .5s; /*trasição de abertura do menu*/
+}
+
+.menu-mobile.abrir-menu{
+     width: 70%; /*abertura do menu*/
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{
+    display: block; /*aparece o overlay*/
+}
+
+.menu-mobile .btn-fechar{
+    padding: 20px 5%; /*deixa o x pouco afastado*/
+}
+
+.menu-mobile .btn-fechar i{
+    color: #00ff00; /*cor do x*/
+    font-size: 30px; /*tamanho do x*/
+}
+
+.menu-mobile nav ul{
+    text-align: right; /*posiçao dos nomes dentro da coluna*/
+}
+
+.menu-mobile nav ul li a{
+    color: #fff; /*cor nos nomes dentro do menu*/
+    font-size: 22px; /*tamanho da fonte dos nomes*/
+    font-weight: 300; /*deixa a font leve*/
+    padding: 20px 8%; /*distancia entre os nomes*/
+    display: block; /*deixa a faixa em bloco*/
+}
+
+.menu-mobile nav ul li a:hover{
+    background-color: #00ff00; /*feixa dos nomes*/
+    color: #000; /*deixa a cor letra-menu-curço*/
+}
+
+.overlay-menu{
+    background-color: #0000005e; /*cor da seguta coluna*/
+    width: 100%; /*tamanho*/
+    height: 100%; /*altura*/
+    position: fixed; /*possição*/
+    top: 0;
+    left: 0;
+    z-index: 88888; /*teceira coluna*/
+    display: none; /*deixa a trc-trans*/
+}
+
+/* ESTILO DO TOPO SITE */
+section.topo-do-site {
+    padding: 40px 4%;
+    /*laterais do site*/
+}
+
+section.topo-do-site .flex {
+    align-items: center;
+    /*alinha o texto*/
+    justify-content: center;
+    /*centralizar o texto*/
+    gap: 90px;
+    /*espassamento dos elemento*/
+}
+
+.topo-do-site h1 {
+    color: #fff;
+    /*cor da fonte*/
+    font-size: 42px;
+    /*tamanho do titulo*/
+    line-height: 40px;
+    /*altura entre linhas*/
+}
+/* PONTO */
+.topo-do-site .txt-topo-site h1 span {
+    color: #00ff00;
+    font-size: 42px;
+}
+/* PARAGRAFO */
+.topo-do-site .txt-topo-site p {
+    color: #fff;
+    /*cor do paragrafo*/
+    margin: 40px 0;
+    /*distancia do titulo,paragrafo e botão-entre-em-contato*/
+}
+/* EFEITO-FOTO DE FERFIL */
+.topo-do-site .img-topo-site img { /*aplicaçao do efeito na img*/
+    position: relative;
+    animation: fotoperfil 2s ease-in-out infinite alternate;
+}
+
+@keyframes fotoperfil {
+
+    /*configuraçao da alimaçao*/
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 30px;
+    }
+}
+/* ESTILO DAS ESPECIALIDADES */
+section.especialidades {
+    padding: 80px 4%; /*tamanho das laterais da caixa especialidades*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+section.especialidades .flex {
+    gap: 60px; /*distancia das bartas da caixa*/
+}
+.especialidades .especialidades-box{
+    color: #fff !important; /*cor dos textos de dentro das caixas*/
+    padding: 40px;/* tamanho dos textos*/
+    border-radius: 35px;/*deixa as pontas das caixa arrendada*/
+    margin-top: 45px;/*distancia do tituto esp das caixas*/
+    transition: .2s;
+    text-decoration: none;
+}
+
+.especialidades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #03fa03a9;
+}
+.especialidades .especialidades-box i {
+    font-size: 58px;
+    /*tamanho dos icones*/
+    color: #00ff00;
+    /*cor dos icones*/
+}
+.especialidades .especialidades-box h3 {
+    font-size: 28px;
+    /*tamanho dos titulos da caixa*/
+    margin: 15px 0;
+    /*distancia do icones e texto da caixa*/
+}
+
+.caixa-esquerda a.caixa-esquerda:visited.caixa-esquerda:hover.caixa-esquerda:active{
+    color: #fff !important; /*cor do texto da caixa*/
+    text-decoration: none !important; /*tira o sublinhado do texto da caixa*/
+}
+
+a.caixa-esquerda p{
+    color: #fff !important;
+    text-decoration: none !important;
+    display: block !important;
+}
+
+a.caixa-esquerda h3{
+    color: #fff !important;
+    text-decoration:none !important;
+    display: block !important;
+}
+
+/* CAIXA-DO-MEIO */
+.caixa-do-meio{
+    color:#fff !important; /*cor das letras da caixa do meio*/
+    text-decoration: none; /*tira o sublinhado da caixa do meio*/
+    display: block; /*deixa a caixa do meio em bloco*/
+}
+/* EFEITO DE HOVER NAS CAIXAS DE ESPECIALIDADES */
+.caixa-do-meio{
+    color:#fff !important; /*cor das letras da caixa do meio*/
+    text-decoration: none; /*tira o sublinhado da caixa do meio*/
+    display: block; /*deixa a caixa do meio em bloco*/
+}
+.caixa-do-meio:hover.caixa-do-meio:visited.caixa-do-meio:active{
+    color: #fff !important; /*cor das letras da caixa do meio*/
+    text-decoration: none; /*tira o sublinhado da caixa do meio*/
+}
+
+/* CAIXA-DIREITA */
+.caixa-direita{
+    color:#fff !important; /*cor das letras da caixa do meio*/
+    text-decoration: none; /*tira o sublinhado da caixa do meio*/
+    display: block; /*deixa a caixa do meio em bloco*/
+}
+
+/* EFEITO DE HOVER NAS CAIXAS DE ESPECIALIDADES */
+.caixa-direita{
+    color:#fff !important; /*cor das letras da caixa do meio*/
+    text-decoration: none; /*tira o sublinhado da caixa do meio*/
+    display: block; /*deixa a caixa do meio em bloco*/
+}
+.caixa-direita:hover.caixa-direita:visited.caixa-direita:active{
+    color: #fff !important; /*cor das letras da caixa do meio*/
+    text-decoration: none; /*tira o sublinhado da caixa do meio*/
+}
+
+/* ESTILO DO SOBRE */
+section.sobre {
+    padding: 40px 4%;
+    /*espaçamento do txt-sobre*/
+}
+
+section.sobre .flex {
+    align-items: center;
+    /*centralizar o txt-sobre no centro*/
+    gap: 60px;
+    /*espaçamento do txt-sobre*/
+}
+
+.sobre .txt-sobre {
+    color: #fff;
+    /*cor do txt-sobre*/
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    /*tamanho da txt-sobre*/
+    line-height: 40px;
+    /*espaçamento entre a quebra*/
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span {
+    color: #00ff00;
+    /*cor do SOU DANIEL*/
+    display: block;
+    /*quebra-titulo MUITO PRAZER..*/
+}
+
+.sobre .txt-sobre p {
+    margin: 20px 0;
+    /*espaçamento do txt-sobre*/
+    text-align: justify;
+    /*justificar o txt-sobre*/
+}
+
+.btn-social button {
+    width: 60px;
+    /*formando do botao-social*/
+    height: 60px;
+    /*botão parte de dentro*/
+    border-radius: 30px;
+    /*deixa redonto*/
+    border: none;
+    /*deixa o cigulo perfeito*/
+    background-color: #00ff00;
+    /*cor de fundo*/
+    font-size: 24px;
+    /*tamanho dos  icones*/
+    cursor: pointer;
+    /*dedinho*/
+    margin: 0 7px;
+    /*margem entre botoes*/
+    transition: .2s;
+    /*trancisão de botao*/
+}
+
+/* ESTILO DO PORTFÓLIO */
+section.portfolio {
+    padding: 80px 4%;
+    /*lagura do port*/
+    box-shadow: 0 0 40px 10px #00ff0047;
+}
+
+section.portfolio .flex {
+    justify-content: space-around;
+    margin-top: 60px;
+    /*estaciamento do titulo-post*/
+}
+
+.img-port {
+    width: 360px;
+    /*altura da caixa-port*/
+    height: 460px;
+    /*lagura da caixa-port*/
+    background-color: #00ff00;
+    /*cor da caixa-port*/
+    background-size: cover;
+    /*ajusta a imagem dentro da caixa-port*/
+    background-position: 100% 0%;
+    /*definir a posição do backgd dentro da caixa-post*/
+    transition: 8s;
+    /*trns-do-efeito*/
+    cursor: pointer;
+    /*efeito do dedinho*/
+    border-radius: 40px;
+    /*deixa a ponta arrendondada*/
+    position: relative;
+}
+
+.img-port:hover {
+    /*efeito-de-rolagem no port*/
+    background-position: 100% 100%;
+    /*definir a posição do backgd dentro da caixa-post*/
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    /*distancia da parte de cima do port*/
+    left: 0;
+    /*deslocamento da parte direita*/
+    width: 100%;
+    /*lagura de toda a tela*/
+    height: 100%;
+    /*laderais de toda tela*/
+    background-color: #0000009a;
+    /*cor da tela*/
+    border-radius: 40px;
+    /*deixa a ponta arrendondada*/
+    display: flex;
+    /*deixa o txt-proj1,2 e 3 no meio*/
+    align-items: center;
+    /*txt-no-centro*/
+    justify-content: center;
+    /*justi-do-txt*/
+    font-size: 24px;
+    /*personal-txt-proj1,2e3*/
+    font-weight: 600px;
+    /*deixa+pesada-txt-proj1,2e3*/
+    color: #fff;
+    /*cor-txt-proj1,2e3*/
+    opacity: 0;
+    /*efeito*/
+    transition: .5s;
+    /*trans-do-efeito*/
+}
+
+.overlay:hover {
+    opacity: 1;
+    /*feito2*/
+}
+
+/* ESTILO DO FORMULÁRIO DE CONTATO */
+section.formulario {
+    padding: 80px 4%;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    background-color: #3939395d;
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 18px;
+}
+
+form textarea {
+    resize: none;
+    max-height: 700px;
+}
+
+form .btn-envia {
+    margin-top: 30px;
+    text-align: center;
+}
+
+form .btn-envia input {
+    width: 120px;
+    background-color: #00ff00;
+    color: #1e1e1e;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+/* ESTILO DO RODAPE */
+footer {
+    padding: 60px 4%;
+    /*espasamento da parte de cime e baixo*/
+    box-shadow: 0 0 40px 10px #00ff0047;
+    /*plano de fundo*/
+}
+
+footer .flex {
+    justify-content: space-between;
+    /*posiçao dos icones*/
+}
+
+footer .line-footer {
+    /*espaçamento entes as faixas*/
+    padding: 20px 0;
+}
+
+.borda {
+    /*linha de separação*/
+    border-top: 2px solid #00ff00;
+}
+
+footer .line-footer p i {
+    color: #22ff00;
+    /*cor do link-email*/
+    font-size: 22px;
+    /*tamanho do icone*/
+}
+
+footer .line-footer p a {
+    color: #fff;
+    /*cor do link-email*/
+    font-size: 21px;
+    /*tamanho do link-email*/
+}
+
+/* AJUSTEDES PARA DISPOSITIVEIS */
+@media screen and (max-width: 1020px) {
+
+    /* CLASSES GERAIS */
+    .flex {
+        flex-direction: column;
+        /*deixa o site em colunas*/
+    }
+    h2.titulo {
+        font-size: 34px;
+        /*tamanho da fonte*/
+        line-height: 30px;
+    }
+
+    .topo-do-site .flex {
+        flex-direction: column-reverse;
+    }
+
+    /* CABERÇARIO */
+    .menu-desktop,
+    .btn-contato {
+        display: none;
+        /*tira o menu e contato da tela*/
+    }
+
+    /* TOPO DO SITE */
+    section.topo-do-site .flex {
+        gap: 40px;
+        /*espassamento dos elemento*/
+    }
+
+    section.topo-do-site {
+        padding: 20px 8%;
+        /*laterais do site*/
+    }
+
+    .topo-do-site h1 {
+        font-size: 30px;
+        /*tamanho do titulo*/
+    }
+
+    .topo-do-site .img-topo-site img {
+        width: 100%;
+    }
+
+    /* ESPECIALIDADE */
+    section.especialidades {
+        padding: 80px 9%;
+        /*tamanho das laterais da caixa especialidades*/
+    }
+    /* SOBRE */
+    section.sobre {
+        padding: 40px 9%;
+        /*espaçamento do txt-sobre*/
+    }
+    .sobre .txt-sobre h2 {
+    font-size: 34px;
+    /*tamanho da txt-sobre*/
+    line-height: 35px;
+    /*espaçamento entre a quebra*/
+    text-align: center; /*deixa o txt no centro*/
+    }
+
+    .img-sobre img{
+        width: 100%;
+    }
+
+    /* PORTFÓLIO */
+    section.portfolio {
+    padding: 80px 8%;
+    /*lagura do port*/
+    }
+
+    .img-port {
+    width: 100%;/*altura da caixa-port*/
+    max-width: 360px; /*dimenção-maxima*/
+    margin: 0 auto; /*centraliza*/
+    }
+
+    section.portfolio .flex {
+       gap: 60px; /*distanciamento das caixas do port*/
+    }
+
+    /* RODAPÉ */
+    footer .line-footer {
+        text-align: center;
+    }
+}
+/* botao voltar*/
+.btn-inicial {
+  text-align:center;
+  margin-top: 20px;
+}
+.btn-inicial button{
+  background-color:rgb(4, 255, 54);
+  color:var(--card-hover);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-height: 10px;
+  min-width: 10px
+}
+/* ===artigo=== */
+:root {
+  --fundo: #170a0a;
+  --painel: #111827;
+  --borda: #1f2a44;
+  --texto: #16ff0a;
+  --suave: #fafcfefe;
+  --ciano: #f9fcfc;
+  --verde: #11ea61;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: var(--fundo);
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: var(--texto);
+  line-height: 1.7;
+}
+
+/* TOPO */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: rgba(10, 14, 23, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--borda);
+}
+.topo-info {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--suave);
+}
+
+/* BOTÃO VOLTAR */
+.btn-voltar {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  color: var(--ciano);
+  background: transparent;
+  border: 1px solid var(--ciano);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.btn-voltar:hover {
+  background: var(--ciano);
+  color: var(--fundo);
+  box-shadow: 0 0 18px rgba(8, 236, 46, 0.949);
+}
+.btn-voltar span { display: inline-block; transition: transform 0.25s; }
+.btn-voltar:hover span { transform: translateX(-4px); }
+
+/* HERO */
+.hero {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 90px 24px 60px;
+}
+.tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--verde);
+  margin-bottom: 12px;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 7vw, 4.8rem);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.destaque {
+  color: var(--ciano);
+  text-shadow: 0 0 24px rgba(34, 211, 238, 0.45);
+}
+.sub { max-width: 640px; color: var(--suave); font-size: 1.15rem; }
+
+/* BLOCOS */
+.bloco, .bloco-coluna {
+  max-width: 1000px;
+  margin: 0 auto 70px;
+  padding: 32px 24px;
+}
+.bloco {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.bloco h2, .bloco-coluna h2 { font-size: 1.7rem; margin-bottom: 10px; line-height: 1.25; }
+.bloco h3 { color: var(--ciano); font-weight: 500; margin-bottom: 12px; }
+
+.destaque-bloco {
+  display: block;
+  border-left: 3px solid var(--ciano);
+  background: var(--painel);
+  border-radius: 0 12px 12px 0;
+}
+.grande {
+  font-size: clamp(2rem, 5vw, 3.2rem) !important;
+  color: var(--ciano);
+  margin-bottom: 16px !important;
+}
+
+/* FOTOS */
+.foto-artigo {
+  position: relative;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--painel);
+  min-height: 220px;
+}
+
+.foto-artigo{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.foto-artigo img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* RODAPÉ */
+.rodape {
+  text-align: center;
+  padding: 40px 24px 60px;
+  border-top: 1px solid var(--borda);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--suave);
+}
+.rodape .btn-voltar { margin-top: 18px; }
+
+/* ANIMAÇÃO AO ROLAR */
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.7s; }
+.reveal.visivel { opacity: 1; transform: none; }
+
+/* CELULAR */
+@media (max-width: 760px) {
+  .bloco { grid-template-columns: 1fr; }
+  .topo-info { display: none; }
+  .hero { padding-top: 60px; }
+}
